@@ -16,7 +16,8 @@ var pluckFirstLineFromFileAsync = function(filePath) {
       if (err) {
         reject(err);
       } else {
-        resolve(content.slice(0, 22));
+        var newContent = content.substring(0, content.indexOf('\n'));
+        resolve(newContent);
       }
     });
   });
